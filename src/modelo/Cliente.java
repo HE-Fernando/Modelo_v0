@@ -1,4 +1,4 @@
-package src.clases;
+package src.modelo;
 public class Cliente {
     private int codigoCliente;
     private String nombreCliente;

@@ -1,4 +1,4 @@
-package src.clases;
+package src.modelo;
 
 public class Usuario {
     private int codigoUsuario;

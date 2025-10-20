@@ -1,10 +1,10 @@
-package src.clases;
+package src.modelo;
 public class Producto {
     private int codigoProducto;
     private String proveedor;
     private String descripcion;
     private double precio;
-    private double stock;
+    private int stock;
     //CONSTRUCTORES
     public Producto(){}
     public Producto(int codigoProducto, String proveedor, String descripcion, double precio, int stock){
@@ -39,10 +39,10 @@ public class Producto {
     public double getPrecio(){
         return this.precio;
     }
-    public void setStock(double stock){
+    public void setStock(int stock){
         this.stock = stock;
     }
-    public double getStock(){
+    public int getStock(){
         return this.stock;
     }
     //METODOS

@@ -1,4 +1,4 @@
-package src.clases;
+package src.modelo;
 import java.time.LocalDate;
 public class Venta {
     private int codigoVenta;

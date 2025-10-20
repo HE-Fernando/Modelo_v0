@@ -1,4 +1,4 @@
-package src.clases;
+package src.app;
 
 import src.conexion.Aconexion;
 import java.sql.Connection;

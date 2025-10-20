@@ -5,16 +5,28 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Aconexion {
-    public static Connection conectar(){
+    private String password = "";
+    private String usuario = "root";
+    private String url = "jdbc:mysql://localhost:3306/sistema?useSSL=false&serverTimezone=UTC";
+    //GET SET
+    public String getPassword(){
+        return this.password;
+    }
+    public String getUsuario(){
+        return this.usuario;
+    }
+    public String getUrl(){
+        return this.url;
+    }
+    //CREO LOS GET Y SET PARA QUE PUEDA ACCEDER A LOS DATOS DE CONEXION, ADEMAS TENGO UN METODO "CONECTAR" PARA PROBAR LA CONEXION
+    //SIN NECESIDAD DE LLAMAR A UN CONTROLADOR
+    public Connection conectar(){
         Connection con = null;
-
-        String password = "";
-        String usuario = "root";
-        String url = "jdbc:mysql://localhost:3306/test?user=" + usuario + "&password=" + password;
         try {
-            con = DriverManager.getConnection(url);
+            con = DriverManager.getConnection(getUrl(), getUsuario(), getPassword());
             if (con != null){
                 System.out.println("Conectado.");
+                con.close(); //CIERRO CONEXION
             }
         } catch (SQLException e){
             System.out.println("No se pudo conectar a la Base de Datos.");
