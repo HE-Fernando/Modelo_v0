@@ -1,4 +1,4 @@
-package src.modelo;
+package modelo;
 import java.time.LocalDate;
 public class Venta {
     private int codigoVenta;
@@ -7,11 +7,9 @@ public class Venta {
     private double total;
     //CONSTRUCTORES
     public Venta(){}
-    public Venta(int codigoVenta, int codigoCliente, LocalDate fecha, double total){
-        this.codigoVenta = codigoVenta;
+    public Venta(int codigoCliente, LocalDate fecha){
         this.codigoCliente = codigoCliente;
         this.fecha = fecha;
-        this.total = total;
     }
     //GET SET
     public void setCodigoVenta(int codigoVenta){
@@ -39,7 +37,11 @@ public class Venta {
         return this.total;
     }
     //METODOS
+    @Override
     public String toString(){
-        return "DATOS";
+        return "Venta [ID:" + getCodigoVenta()+ 
+                "\nCliente ID: " + getCodigoCliente()+
+                "\nFecha: " + getFecha()+
+                "\nTotal: " + getTotal()+ "]\n\n";
     }
 }

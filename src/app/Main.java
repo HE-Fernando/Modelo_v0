@@ -8,10 +8,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        Connection con = null;
-        con = Aconexion.conectar();
-        if (con == null){
-            System.out.println("Error al conectar.");
-        }
+        Aconexion con = new Aconexion();
+        con.conectar();
     }
 }

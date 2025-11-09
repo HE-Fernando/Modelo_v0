@@ -1,17 +1,14 @@
-package src.modelo;
+package modelo;
 public class Producto {
     private int codigoProducto;
     private String proveedor;
     private String descripcion;
-    private double precio;
     private int stock;
     //CONSTRUCTORES
     public Producto(){}
-    public Producto(int codigoProducto, String proveedor, String descripcion, double precio, int stock){
-        this.codigoProducto = codigoProducto;
+    public Producto(String proveedor, String descripcion, int stock){
         this.proveedor = proveedor;
         this.descripcion = descripcion;
-        this.precio = precio;
         this.stock = stock;
     }
     //SET GET
@@ -33,12 +30,6 @@ public class Producto {
     public String getDescripcion(){
         return this.descripcion;
     }
-    public void setPrecio(double precio){
-        this.precio = precio;
-    }
-    public double getPrecio(){
-        return this.precio;
-    }
     public void setStock(int stock){
         this.stock = stock;
     }
@@ -46,7 +37,11 @@ public class Producto {
         return this.stock;
     }
     //METODOS
+    @Override
     public String toString(){
-        return "DATOS";
+        return "Producto [ID:" + getCodigoProducto()+ 
+                "\nProveedor: " + getProveedor()+ 
+                "\nDescripción: " + getDescripcion() + 
+                "\nStock: " + getStock() + "]\n\n";
     }
 }
